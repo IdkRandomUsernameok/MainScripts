@@ -1,0 +1,42 @@
+function playanim(at,tp,s,ds,dt,ft,fc,v,de,te) --// Ignore my goofy function LOL
+local Anim = Instance.new("Animation")
+Anim.AnimationId = "rbxassetid://"..at
+local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
+k:Play();k.TimePosition = tp;k:AdjustSpeed(s)
+--spawn(function() if at or tp or s or ds or dt or ft or fc == nil then return end end)
+spawn(function() if ds == nil then dt=nil elseif ft == nil then fc=nil end end)
+spawn(function() if ft then function f(m) fc(m) end if de then wait(te) f(v) elseif not de then f(v) end end end)
+spawn(function() if ds then wait(dt) k:Stop() end end)
+return k
+end
+
+local script = game.Players.LocalPlayer.Character.Looking
+local v31 = game.Players.LocalPlayer.Character.HumanoidRootPart.BodyGyro
+local v9 = require(game.ReplicatedStorage.CameraShaker);
+local v10 = v9.new(Enum.RenderPriority.Camera.Value, function(p1)
+	l__CurrentCamera__1.CFrame = l__CurrentCamera__1.CFrame * p1;
+end);
+local l__RunService__19 = game:GetService("RunService");
+local l__Humanoid__20 = game.Players.LocalPlayer.Character.Humanoid
+local l__CurrentCamera__1 = game.Workspace.CurrentCamera;
+l__Humanoid__20.JumpHeight = 0;
+l__Humanoid__20.AutoRotate = false;
+l__Humanoid__20.WalkSpeed = l__Humanoid__20.WalkSpeed + 20;
+playanim("10591557872")
+script.Roll:Play();
+v10:Shake(v9.Presets.Bump);
+v31.MaxTorque = Vector3.new(0, math.huge, 0);
+v31.CFrame = CFrame.new(l__Humanoid__20.RootPart.CFrame.p, l__Humanoid__20.RootPart.CFrame.p + Vector3.new(l__CurrentCamera__1.CFrame.lookVector.X, 0, l__CurrentCamera__1.CFrame.lookVector.Z));
+local v32 = l__RunService__19.RenderStepped:Connect(function(p9)
+    l__Humanoid__20:Move(Vector3.new(0, 0, -1), true);
+end);
+wait(0.8);
+l__Humanoid__20.AutoRotate = true;
+v31.MaxTorque = Vector3.new(0, 0, 0);
+if v41 ~= nil then
+    v41:Disconnect();
+end;
+l__Humanoid__20.WalkSpeed = l__Humanoid__20.WalkSpeed - 20;
+print(l__Humanoid__20.WalkSpeed);
+l__Humanoid__20.JumpHeight = l__Humanoid__20.JumpHeight;
+v31.MaxTorque = Vector3.new(0, 0, 0);
