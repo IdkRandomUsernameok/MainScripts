@@ -21,7 +21,7 @@ local l__Humanoid__20 = game.Players.LocalPlayer.Character.Humanoid
 local l__CurrentCamera__1 = game.Workspace.CurrentCamera;
 local mouse = game.Players.LocalPlayer:GetMouse()
 mouse.KeyDown:Connect(function(k) 
-	if k == "c" then
+	if k == "f" then
 l__Humanoid__20.JumpHeight = 0;
 l__Humanoid__20.AutoRotate = false;
 l__Humanoid__20.WalkSpeed = l__Humanoid__20.WalkSpeed + 20;
