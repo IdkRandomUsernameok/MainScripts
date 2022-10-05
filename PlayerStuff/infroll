@@ -1,4 +1,4 @@
-function playanim(at,tp,s,ds,dt,ft,fc,v,de,te) --// Ignore goofy function LOL
+function playanim(at,tp,s,ds,dt,ft,fc,v,de,te) --// Ignore my goofy function LOL
 local Anim = Instance.new("Animation")
 Anim.AnimationId = "rbxassetid://"..at
 local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
@@ -36,8 +36,8 @@ end);
 wait(0.8);
 l__Humanoid__20.AutoRotate = true;
 v31.MaxTorque = Vector3.new(0, 0, 0);
-if v41 ~= nil then
-    v41:Disconnect();
+if v32 ~= nil then
+    v32:Disconnect();
 end;
 l__Humanoid__20.WalkSpeed = l__Humanoid__20.WalkSpeed - 20;
 print(l__Humanoid__20.WalkSpeed);
