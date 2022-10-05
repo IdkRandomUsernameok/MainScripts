@@ -1,0 +1,44 @@
+local plrs = game:GetService("Players")
+local lp = plrs.LocalPlayer
+
+function notify(tit,te,dur)
+game.StarterGui:SetCore("SendNotification", {
+Title = tit;
+Text = te;
+Duration = dur;
+})
+end
+
+local function gp(parent, name, className)
+	local ret = nil
+	pcall(function()
+		for i, v in pairs(parent:GetChildren()) do
+			if (v.Name == name) and v:IsA(className) then
+				ret = v
+				break
+			end
+		end
+	end)
+	return ret
+end
+
+local c = lp.Character
+	if c then
+		local cpar = c.Parent
+		if cpar then
+			local hrp = gp(c, "HumanoidRootPart", "BasePart")
+			if hrp then
+				c.Parent = nil
+				hrp:Destroy()
+				c.Parent = cpar
+				notify("Worked","hrp removed",5)
+				notify("WARNING","Most things won't work now that u did this",5)
+			else
+				notify("unsuccessful","hrp not found",5)
+			end
+		else
+			notify("unsuccessful","character not found",5)
+		end
+	else
+		notify("unsuccessful","character not found",5)
+	end
