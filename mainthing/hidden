@@ -1,0 +1,5 @@
+for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+    if v.Name == "face" or v:IsA("Accesssory") or v:IsA("Shirt") or v:IsA("Pants") then
+        v:Destroy()
+    end
+end
