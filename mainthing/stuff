@@ -1,0 +1,15 @@
+local mt = getrawmetatable(game)
+local old = mt.__namecall
+local Players = game.Players
+
+setreadonly(mt, false)
+mt.__namecall = newcclosure(function(self,...)
+local args = {...}
+local method = getnamecallmethod()
+    if self == Players.LocalPlayer and (method == "kick" or method == "Kick") then 
+        print("Namecall kick attempted.")
+        return wait(math.huge)
+    end
+    return old(self,...)
+end)
+setreadonly(mt, true)
