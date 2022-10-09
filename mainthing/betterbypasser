@@ -1,3 +1,6 @@
+--// so uh this isn't mine but I found it and edited it so there isn't no bullshit stuff that forces you to join their discord but if you want the original link here: https://raw.githubusercontent.com/daddysyn/synergy/additional/betterbypasser
+
+
 if not getgenv() then return end
 
 if not getgenv().method or getgenv().method == nil then
@@ -22,7 +25,7 @@ local filteredString = Chat:FilterStringForBroadcast(message, playerFrom)
 
 
 local queueonteleport = (syn and syn.queue_on_teleport) or queue_on_teleport or (fluxus and fluxus.queue_on_teleport)
-queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/daddysyn/synergy/additional/betterbypasser'))()")
+queueonteleport("loadstring(game:HttpGet('https://raw.githubusercontent.com/IdkRandomUsernameok/MainScripts/main/mainthing/betterbypasser'))()")
 
 function execute()
 
